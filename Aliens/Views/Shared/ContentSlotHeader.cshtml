@@ -1,0 +1,6 @@
+﻿@model JObject
+
+@using Newtonsoft.Json.Linq
+    @foreach (JObject cartridge in Model["contents"]){
+        Html.RenderAction(cartridge["@type"].Value<string>(), new { Controller = "Home", inptModel = cartridge });
+    }

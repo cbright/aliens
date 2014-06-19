@@ -1,0 +1,25 @@
+﻿@using Newtonsoft.Json.Linq
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var root = (JObject) ViewBag.Root;
+}
+
+@section meta{
+    <meta name="description" content="@root["metaDescription"]"/>
+    <meta name="keywords" content="@root["metaKeywords"]"/>
+    @RenderSection("meta", false)
+}
+<header id="header">
+    @foreach (JObject cartridge in root["headerContent"]){
+        Html.RenderAction(cartridge["@type"].Value<string>(),new {Controller ="Home",Model = cartridge});
+    }
+</header>
+
+<div id="container">
+    <div id="content">
+        @foreach (JObject cartridge in root["mainContent"]){
+            Html.RenderAction(cartridge["@type"].Value<string>(),new {Controller ="Home",Model = cartridge});
+        }
+        @RenderBody()
+    </div>
+</div>

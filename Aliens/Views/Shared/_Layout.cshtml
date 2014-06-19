@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    @RenderSection("meta",false)
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles",false)
+</head>
+<body>
+    @RenderBody()
+    <footer id="footer">
+        Copyright © Site name, 20XX
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", false)
+    
+</body>
+</html>

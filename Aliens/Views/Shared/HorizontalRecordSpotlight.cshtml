@@ -1,0 +1,24 @@
+﻿@using Newtonsoft.Json.Linq
+@model JObject
+
+
+<div>
+
+    <div>
+        <div>
+            <ul>
+                @foreach (JObject product in Model["records"].SelectMany(x => x["records"]))
+                {
+                    <li>
+                        <a href="">
+                        <img src="@product["attributes"]["product.img_url_thumbnail"][0].ToString()" alt="@product["attributes"]["product.name"][0].ToString()">
+                            </a>
+                    </li>    
+                }
+                        
+            </ul>
+        </div>
+    </div>
+</div>
+
+
