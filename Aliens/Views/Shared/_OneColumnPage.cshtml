@@ -4,6 +4,11 @@
     var root = (JObject) ViewBag.Root;
 }
 
+@section styles
+{
+    @RenderSection("styles",false)
+}
+
 @section meta{
     <meta name="description" content="@root["metaDescription"]"/>
     <meta name="keywords" content="@root["metaKeywords"]"/>
@@ -23,3 +28,8 @@
         @RenderBody()
     </div>
 </div>
+
+@section scripts
+{
+    @RenderSection("scripts",false)
+}

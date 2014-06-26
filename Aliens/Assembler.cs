@@ -15,7 +15,7 @@ namespace Aliens
             using (var client = new HttpClient())
             {
                 //var response = await client.GetAsync(string.Concat("http://localhost:8006/assembler/json/pages/",url));
-                var test = File.ReadAllText(HttpContext.Current.Server.MapPath("~/Content/test.json"));
+                var test = File.ReadAllText(HttpContext.Current.Server.MapPath("~/Content/HeroSpot.json"));
                 return JsonConvert.DeserializeObject<dynamic>(test);
             }
         }

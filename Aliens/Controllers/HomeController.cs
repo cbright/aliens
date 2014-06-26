@@ -45,5 +45,11 @@ namespace Aliens.Controllers
             return PartialView(model);
         }
 
+        [ChildActionOnly]
+        public PartialViewResult HeroBanner(JObject model)
+        {
+            return PartialView(model);
+        }
+
     }
 }
